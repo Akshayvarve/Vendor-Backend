@@ -1,0 +1,1 @@
+var conn = require('../../config/db.config');
