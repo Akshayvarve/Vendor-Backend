@@ -2,16 +2,10 @@ const mysql = require('mysql')
 
 //create connection
 const conn = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database:'vendor'
-    
-    // database:'billsoft_alnoorschool'
-    // host: 'nodejshosting1.hostingraja.org',
-    // user: 'billsof1_instasol',
-    // password: 'Pass_123#@!',
-    // database: 'billsof1_instasol'
+    host: 'ba5iyqohaykukda0e7yc-mysql.services.clever-cloud.com',
+    user: 'uvopgc4hnxkltbsd',
+    password: 'uvopgc4hnxkltbsd',
+    database: 'ba5iyqohaykukda0e7yc'
 });
 conn.connect(function(error){
     if(error) throw error;
