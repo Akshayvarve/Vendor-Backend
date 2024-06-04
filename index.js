@@ -20,7 +20,7 @@ app.use(session({
 
 // CORS configuration
 app.use(cors({
-    origin: 'https://vendor-frontend-delta.vercel.app', // Allow your frontend origin
+    origin: 'https://vendor-frontend-peach.vercel.app', // Allow your frontend origin
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true, // Allow cookies to be sent
     allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
