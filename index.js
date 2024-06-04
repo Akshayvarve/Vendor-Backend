@@ -26,16 +26,9 @@ app.use(cors({
     allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
 }));
 
-// Handle preflight requests
-app.options('*', cors());
-
-// Debugging middleware to log incoming requests and outgoing responses
-app.use((req, res, next) => {
-    console.log('Incoming Request:', req.method, req.url);
-    res.on('finish', () => {
-        console.log('Outgoing Response:', res.statusCode, res.statusMessage);
-    });
-    next();
+// Handle preflight requests for all routes
+app.options('*', (req, res) => {
+    res.status(200).end();
 });
 
 const port = process.env.PORT || 5000;
