@@ -49,25 +49,25 @@ app.get('/', (req, res) => {
 });
 
 const vendor = require('./src/routes/vendor.route');
-app.use('/Default/vendor', vendor);
+app.use('/api/Default/vendor', vendor);
 
 const vendorAddress = require('./src/routes/vendor-address.route');
-app.use('/Default/vendorAddress', vendorAddress);
+app.use('/api/Default/vendorAddress', vendorAddress);
 
 const country = require('./src/routes/country.route');
-app.use('/Default/country', country);
+app.use('/api/Default/country', country);
 
 const state = require('./src/routes/state.route');
-app.use('/Default/state', state);
+app.use('/api/Default/state', state);
 
 const city = require('./src/routes/city.route');
-app.use('/Default/city', city);
+app.use('/api/Default/city', city);
 
 const bank = require('./src/routes/bank.route');
-app.use('/Default/bank', bank);
+app.use('/api/Default/bank', bank);
 
 const user = require('./src/routes/user-route');
-app.use('/Default/user', user);
+app.use('/api/Default/user', user);
 
 app.listen(port, () => {
     console.log(`Express Server Is Running At Port ${port}`);
