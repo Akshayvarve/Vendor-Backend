@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer');
-const fileExtension = require('file-extension');
+var fileExtension = require('file-extension');
 const path = require("path");
 const session = require('express-session');
 require('dotenv').config();
@@ -26,10 +26,8 @@ app.use(cors({
     allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
 }));
 
-// Handle preflight requests for all routes
-app.options('*', (req, res) => {
-    res.status(200).end();
-});
+// Handle preflight requests
+app.options('*', cors());
 
 const port = process.env.PORT || 5000;
 
