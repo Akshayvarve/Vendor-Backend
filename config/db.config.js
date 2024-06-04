@@ -1,20 +1,21 @@
-const mysql = require('mysql')
+const mysql = require('mysql');
+const dotenv = require('dotenv');
 
-//create connection
+// Load environment variables from .env file
+dotenv.config();
+
+// Create connection
 const conn = mysql.createConnection({
-    host: 'sql12.freemysqlhosting.net',
-    user: 'sql12711632',
-    password: 'Ywe7DSDFBy',
-    database: 'sql12711632'
-
-    // host: 'nodejshosting1.hostingraja.org',
-    // user: 'billsof1_instasol',
-    // password: 'Pass_123#@!',
-    // database: 'billsof1_instasol'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
 });
-conn.connect(function(error){
-    if(error) throw error;
-    console.log('Database Connected succesfully');
-})
+
+// Connect to database
+conn.connect(function(error) {
+    if (error) throw error;
+    console.log('Database connected successfully');
+});
 
 module.exports = conn;
