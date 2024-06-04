@@ -1,21 +1,20 @@
-require('dotenv').config();
-const mysql = require('mysql');
+const mysql = require('mysql')
 
-// Create connection
+//create connection
 const conn = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
-});
+    host: 'sql12.freemysqlhosting.net',
+    user: 'sql12711632',
+    password: 'Ywe7DSDFBy',
+    database: 'sql12711632'
 
-conn.connect(function(error){
-    if(error) {
-        console.error('Database connection failed:', error);
-        process.exit(1); // Exit the process with an error code
-    } else {
-        console.log('Database Connected successfully');
-    }
+    // host: 'nodejshosting1.hostingraja.org',
+    // user: 'billsof1_instasol',
+    // password: 'Pass_123#@!',
+    // database: 'billsof1_instasol'
 });
+conn.connect(function(error){
+    if(error) throw error;
+    console.log('Database Connected succesfully');
+})
 
 module.exports = conn;
